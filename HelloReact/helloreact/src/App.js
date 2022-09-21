@@ -1,14 +1,24 @@
 import Card from "./Card";
-import Card2 from "./Card2";
-import Card3 from "./Card3";
 import "./App.css";
 
 const App = () => {
+    const click = () => {
+        console.log("ik ben geklikt");
+    }
+
+    const random = () => {
+        console.log(Math.random());
+    }
+
+    const sum = () => {
+        console.log(12312 + 1244);
+    }
+
     return(
         <>
-            <Card />
-            <Card2 />
-            <Card3 />
+            <Card mouseclick={click} />
+            <Card mouseclick={random} />
+            <Card mouseclick={sum} />
         </>
     );
 }

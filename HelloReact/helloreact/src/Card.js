@@ -1,16 +1,13 @@
 import "./Card.css";
 
-const Card = () => {
-    const hallo = () =>{
-        console.log("ik ben kaartje een");
-    }
+const Card = (props) => {
     return(
-        <article onClick={hallo}>
+        <article onClick={props.mouseclick}>
             <header>
-                <h2>Eerste kaart</h2>
+            <h2>{props.title || "Placeholder Title"}</h2>
             </header>
             <section>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae minima optio, doloremque veniam dicta repellendus perferendis impedit ullam rerum dolorem, cumque exercitationem quaerat quibusdam perspiciatis tenetur et architecto vitae quam!
+                {props.text || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur aliquid recusandae neque officiis odio assumenda obcaecati explicabo harum tempore? Corporis repellat maiores vero hic! Neque itaque praesentium id reprehenderit. Provident?"}
             </section>
         </article>
     );
