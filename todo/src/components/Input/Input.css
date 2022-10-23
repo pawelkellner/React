@@ -1,0 +1,21 @@
+.input{
+    margin: 1rem;
+    padding: 0.5rem 2rem;
+    font-size: 100%;
+    font-family: 'Bungee Spice', sans-serif;
+}
+
+.section__button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input{
+    width: 70%;
+}
+
+.button{
+    width: 20%;
+    padding: 1rem 1rem;
+}

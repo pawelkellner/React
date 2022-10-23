@@ -1,51 +1,75 @@
-import Item from "../item/item"
+import React from "react";
+import Item from "../item/item";
+import tasksObject from "../../data/tasks";
+import Input from "../../components/Input/Input";
 import "./Todo.css";
 
 
-const Todo = () =>{
-    const tasks = [
-        {
-            name: "Groceries",
-            done: false,
-            id: 1
-        },
-        {
-            name: "Walking the dog",
-            done: false,
-            id: 2
-        },
-        {
-            name: "Get bitches",
-            done: false,
-            id: 3
-        },
-        {
-            name: "Code awesome stuff",
-            done: false,
-            id: 4
-        },
-        {
-            name: "Code more awesome stuff",
-            done: false,
-            id: 5
+class Todo extends React.Component{
+
+    constructor(props){
+        super(props);
+        this.state = {
+            tasks: [],
         }
-    ];
+    }
 
-    let listItems = tasks.map(task => {
-        return <Item key={task.id} name={task.name} done={task.done}/>
-    })
+    // runt naa het aanmaken en tekenen van een component
+    componentDidMount(){
+        this.setState({
+            tasks: [],
+        })
+    }
 
-    console.log(listItems);
-    return(
-        <article className="todo">
-            <header className="todo__header">
-                <h1 className="todo__heading">Things to do:</h1>
-            </header>
-            <ul className="todo__list">
-                {listItems}
-            </ul>
-        </article>
-    )
+    // runt na het update van de state
+    componentDidUpdate(){
+
+    }
+
+    update = () => {
+        let tempArray = this.state.tasks;
+        let combinedArray = tempArray.concat([
+            {
+                name: "Todo afmaken",
+                done: false,
+                id: 10,
+            }
+        ]);
+        this.setState({
+            tasks: combinedArray,
+        })
+    }
+
+    InputPressedEnter = (inputFromInputComponent) => {
+        let toBeAdded = [
+            {
+                name: inputFromInputComponent,
+                done: false,
+                id: 100,
+            }
+        ]
+        let arrays = this.state.tasks.concat(toBeAdded);
+        this.setState({
+            tasks: arrays,
+        })
+    }
+
+    render(){
+        let Items = this.state.tasks.map(task => {
+            return <Item key={task.id} name={task.name} done={task.done}></Item>
+        });
+        return(
+            <article className="todo">
+                <header className="todo__header">
+                    <h1 className="todo__heading">{this.props.title}</h1>
+                </header>
+                <ul className="todo__list">
+                    {Items}
+                </ul>
+                <Input inputPressedEnter={this.InputPressedEnter}/>
+            </article>
+        ) 
+    }
 }
 
 export default Todo;

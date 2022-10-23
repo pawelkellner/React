@@ -19,7 +19,6 @@ class Item extends React.Component{
         else{
             this.className = "todo__item";
         }
-        console.log(this.state.done)
         return(
         <li onClick={this.onItemClick} className={this.className}>{this.props.name}</li>
         )
