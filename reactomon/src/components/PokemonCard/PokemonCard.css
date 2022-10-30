@@ -1,0 +1,120 @@
+.pokemonCard {
+    background: #eee;
+    width: 40rem;
+    height: 50rem;
+    min-height: 50rem;
+    box-shadow: 0 0 2rem rgba(0,0,0,0.2);
+    border-radius: 1rem;
+    padding: 2rem
+}
+
+/* .pokemonCard, .pokemonCard *{
+    border: 0.1rem solid red;
+} */
+
+.pokemonCard__header{
+    height: 20%;
+}
+
+.pokemonCard__title{
+    font-size: 200%;
+    font-weight: 400;
+}
+
+.pokemonCard__label--wrapper{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pokemonCard__type{
+    font-size: 70%;
+    background: yellow;
+    padding: 0.3rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    color: #eee;
+}
+
+.pokemonCard__type--water{
+    background: #31E1F7;
+}
+
+.pokemonCard__type--ground{
+    background: #AE431E;
+}
+
+.pokemonCard__type--electric{
+    background: #fad502;
+}
+
+.pokemonCard__type--normal{
+    background: #ffffff;
+}
+
+.pokemonCard__type--psychic{
+    background: #817976;
+}
+
+.pokemonCard__section{
+    height: 60%;
+}
+
+.pokemonCard__figure{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.pokemonCard__img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.pokemonCard__hp--wrapper{
+    height: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.pokemonCard__hp{
+    font-weight: 400;
+    font-size: 90%;
+}
+
+.pokemonCard__footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20%;
+    gap: 2rem;
+}
+
+.pokemonCard__button{
+    border: none;
+    background: none;
+    font-size: 100%;
+    padding: 0.5rem 4rem;
+    border-radius: 0.5rem;
+    color: #eee;
+    flex-grow: 1;
+    font-family: 'Open sans', sans-serif;
+}
+
+.pokemonCard__button--attack{
+    background: #EC255A;
+}
+
+.pokemonCard__button--catch{
+    background: #9AE66E;
+}
+
+@media screen and (max-width: 62.5rem){
+    .pokemonCard{
+        width: 100%;
+    }
+}

@@ -1,0 +1,29 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 0.1rem solid red; */
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 2rem;
+    font-family: 'Open Sans',sans-serif;
+    padding: 4rem;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 62.5rem){
+    .main{
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
