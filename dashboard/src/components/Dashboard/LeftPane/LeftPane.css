@@ -1,0 +1,56 @@
+.dashboard__wrapper{
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: -1rem 0 5rem 0 hsla(120, 2%, 5%, 0.3);
+}
+
+.dashboard__ul{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    list-style: none;
+}
+
+.dashboard__li{
+
+}
+
+.dashboard__a{
+    display: flex;
+}
+
+.dashboard__a:hover .dashboard__message{
+    filter: hue-rotate(100deg);
+}
+
+.dashboard__message{
+    width: 2rem;
+    height: 2rem;
+    background: linear-gradient(to bottom right, #4E9F3D, 95%,#1E5128);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 80%;
+    transform: translateY(-8px);
+    transition: 0.8s all;
+}
+
+.dashboard__button{
+    width: 20rem;
+    height: 7rem;
+    font-size: 100%;
+    font-family: sans-serif;
+    border: none;
+    color: #eee;
+    border-radius: 5rem;
+    background: linear-gradient(to bottom right, #4E9F3D, 95%,#1E5128);
+    transition: 0.8s all;
+}
+
+.dashboard__button:hover{
+    cursor: pointer;
+    filter: hue-rotate(100deg);
+}
