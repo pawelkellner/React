@@ -3,6 +3,7 @@ import "./Dashboard.css"
 import LeftPane from "./LeftPane/LeftPane"
 import RightPane from "./RightPane/RightPane"
 import autoImage from "../../images/car.jpg"
+import chadImage from "../../images/giga_chad.jpg"
 import Popup from "../Popup/Popup"
 
 class Dashboard  extends React.Component{
@@ -17,36 +18,38 @@ class Dashboard  extends React.Component{
             {
                 name: "Placeholder"
             },
-            {
-                name: "Auto",
-                img: autoImage
-            },
-            {
-                name: "Sterren"
-            }
         ];
         this.setState({productsCards: productCards})
     }
 
     addProduct = () =>{
+        this.setState({
+            open: !this.state.open
+        })
+    }
+
+    addButtonClicked = (inputFromPopup) =>{
+        let toBeAddedImage;
+        switch(inputFromPopup){
+            case("Giga chad"):
+                toBeAddedImage = chadImage;
+                break;
+            case("Auto"):
+                toBeAddedImage = autoImage
+                break;
+            default:
+                break;
+        }
         let toBeAdded = 
         [
             {
-                name: "Benjito"
+                name: inputFromPopup,
+                img: toBeAddedImage
             }
         ];
-
         let fullArray = this.state.productsCards.concat(toBeAdded)
         this.setState({
             productsCards: fullArray,
-            open: !this.state.open
-        })
-
-    }
-
-    addButtonClicked = () =>{
-        console.log("bevatten")
-        this.setState({
             open: !this.state.open
         })
     }
