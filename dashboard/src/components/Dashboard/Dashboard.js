@@ -2,10 +2,11 @@ import React from "react"
 import "./Dashboard.css"
 import LeftPane from "./LeftPane/LeftPane"
 import RightPane from "./RightPane/RightPane"
-import autoImage from "../../images/car.jpg"
-import chadImage from "../../images/giga_chad.jpg"
+/*import data from data source */
+import navObject from "../data/navigationList"
+import productsObject from "../data/products"
 import Popup from "../Popup/Popup"
-
+import chooseImage from "../../helpers/chooseImage"
 class Dashboard  extends React.Component{
     constructor(props){
         super(props)
@@ -13,13 +14,7 @@ class Dashboard  extends React.Component{
     }
 
     componentDidMount(){
-        let productCards =
-        [
-            {
-                name: "Placeholder"
-            },
-        ];
-        this.setState({productsCards: productCards})
+        this.setState({productsCards: productsObject.products})
     }
 
     addProduct = () =>{
@@ -29,22 +24,13 @@ class Dashboard  extends React.Component{
     }
 
     addButtonClicked = (inputFromPopup) =>{
-        let toBeAddedImage;
-        switch(inputFromPopup){
-            case("Giga chad"):
-                toBeAddedImage = chadImage;
-                break;
-            case("Auto"):
-                toBeAddedImage = autoImage
-                break;
-            default:
-                break;
-        }
+        let imageFromHelper = chooseImage(inputFromPopup);
         let toBeAdded = 
         [
             {
+                id: this.state.productsCards.length + 1,
                 name: inputFromPopup,
-                img: toBeAddedImage
+                img: imageFromHelper
             }
         ];
         let fullArray = this.state.productsCards.concat(toBeAdded)
@@ -55,33 +41,10 @@ class Dashboard  extends React.Component{
     }
 
     render(){
-        let navigationListItems = 
-        [
-            {
-                name: "Home",
-                message: 0,
-            },
-            {
-                name: "Facturen",
-                message: 3,
-            },
-            {
-                name: "Bestellingen",
-                message: 0,
-            },
-            {
-                name: "Retour",
-                message: 1,
-            },
-            {
-                name: "Contact",
-                message: 2,
-            }
-        ];
         if(this.state.open === true){
             return(
                 <article className="dashboard">
-                    <LeftPane navigationListItems={navigationListItems} buttonText="Go premium!"/>
+                    <LeftPane navigationListItems={navObject.navigationListItems} buttonText="Go premium!"/>
                     <RightPane 
                     addProduct={this.addProduct}
                     productCards={this.state.productsCards}

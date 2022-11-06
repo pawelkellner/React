@@ -8,14 +8,14 @@ const RightPane = ({headerText, buttonSymbol, buttonText, productCards, addProdu
     let productCardsToBeRendered = productCards.map(product =>{
         if(product.name === "Placeholder"){
             return( 
-                <li className="productsList__item">
+                <li key={product.id} className="productsList__item">
                     <button onClick={addProduct} className="productsList__button">{buttonSymbol || "*"}</button>
                     <p className="productsList__text">{buttonText || "Placeholder text"}</p>
                 </li>
             )
         }
         return(
-            <li className="productsList__item product">
+            <li key={product.id} className="productsList__item product">
                 <img className="productsList__img" src={product.img} alt={product.name}/>
                 <div className="productsList__Fade">
                     <p className="productsList__imgText">{product.name}</p>
