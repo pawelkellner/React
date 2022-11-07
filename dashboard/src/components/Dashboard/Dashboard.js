@@ -10,7 +10,7 @@ import chooseImage from "../../helpers/chooseImage"
 class Dashboard  extends React.Component{
     constructor(props){
         super(props)
-        this.state = {productsCards: [], open: true}
+        this.state = {productsCards: [], open: true, cardClicked: {}}
     }
 
     componentDidMount(){
@@ -40,19 +40,22 @@ class Dashboard  extends React.Component{
         })
     }
 
-    onCardClicked = () =>{
+    onCardClicked = (idFromCard) =>{
+        console.log(this.state.productsCards[idFromCard -1])
         this.setState({
-            open: !this.state.open
+            open: !this.state.open,
+            cardClicked: this.state.productsCards[idFromCard -1]
         })
     }
 
     render(){
+        console.log(this.state.cardClicked)
         if(this.state.open === true){
             return(
                 <article className="dashboard">
                     <LeftPane navigationListItems={navObject.navigationListItems} buttonText="Go premium!"/>
                     <RightPane
-                    onCardClicked={this.onCardClicked} 
+                    onProductCardClicked={this.onCardClicked} 
                     addProduct={this.addProduct}
                     productCards={this.state.productsCards}
                     headerText="Mijn Producten"
@@ -63,7 +66,8 @@ class Dashboard  extends React.Component{
             )
         }
         return(
-            <Popup 
+            <Popup
+            cardClicked={this.state.cardClicked}
             addButtonClicked={this.addButtonClicked}
             />
         )
