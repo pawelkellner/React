@@ -1,9 +1,10 @@
-import img from "../../../images/car.jpg"
+import ProductCard from "../../ProductCard/ProductCard"
 import "./RightPane.css"
 
 const RightPane = ({headerText, buttonSymbol, buttonText, productCards, addProduct}) => {
-
-
+    let onCardClicked= (idFromCard) =>{
+        console.log("hallo benjito: " + idFromCard)
+    }
 
     let productCardsToBeRendered = productCards.map(product =>{
         if(product.name === "Placeholder"){
@@ -14,14 +15,7 @@ const RightPane = ({headerText, buttonSymbol, buttonText, productCards, addProdu
                 </li>
             )
         }
-        return(
-            <li key={product.id} className="productsList__item product">
-                <img className="productsList__img" src={product.img} alt={product.name}/>
-                <div className="productsList__Fade">
-                    <p className="productsList__imgText">{product.name}</p>
-                </div>
-            </li>
-        )
+        return <ProductCard onCardClicked={onCardClicked} key={product.id} id={product.id} name={product.name} productImg={product.img}/>
     })
 
     return(
