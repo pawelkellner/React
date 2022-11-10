@@ -30,6 +30,12 @@
     flex-direction: column;
     gap: 2rem;
     position: relative;
+    transition: 0.8s all;
+}
+
+.productsList__item--gray:hover{
+    cursor: pointer;
+    filter: grayscale(1);
 }
 
 .product{
@@ -78,4 +84,10 @@
     height: 100%;
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 464px){
+    .header__h1{
+        font-size: 150%;
+    }
 }

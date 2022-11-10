@@ -1,0 +1,23 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 2rem;
+    background: linear-gradient(to bottom right,#E14D2A,#FD841F);
+    font-family: 'Open Sans', sans-serif;
+}
+
+#root{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

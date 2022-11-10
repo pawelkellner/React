@@ -54,3 +54,9 @@
     cursor: pointer;
     filter: hue-rotate(100deg);
 }
+
+@media screen and (max-width: 1024px) {
+    .dashboard__wrapper{
+        gap: 2rem;
+    }
+}
