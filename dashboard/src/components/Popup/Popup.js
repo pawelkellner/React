@@ -29,6 +29,7 @@ class Popup extends React.Component{
             button = <button onClick={this.editProduct} className="popup__button">Pas aan</button>;
         }
         return(
+            <div className="popup__flexWrapper">
             <article className="popup">
                 <div className="popup__wrapper">
                     <label htmlFor="name" className="popup__label">Naam</label>
@@ -36,6 +37,19 @@ class Popup extends React.Component{
                 </div>
                 {button}
             </article>
+            <article className="popup">
+                <div className="popup__wrapper">
+                    <h1>Kiez uit:</h1>
+                    <ul>
+                        <li>Giga chad</li>
+                        <li>Auto</li>
+                        <li>Saul</li>
+                        <li>Happy</li>
+                        <li>Sussy</li>
+                    </ul>
+                </div>
+            </article>
+            </div>
         )
     }
 }

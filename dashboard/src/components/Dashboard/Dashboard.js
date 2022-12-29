@@ -100,6 +100,7 @@ class Dashboard  extends React.Component{
             editMode={this.state.editMode}
             cardClicked={this.state.cardClicked}
             addButtonClicked={this.addButtonClicked}
+            productsCards={this.state.productsCards}
             />
         )
         
